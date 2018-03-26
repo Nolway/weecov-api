@@ -14,6 +14,7 @@ app.listen(3000, () => {
 
 // Import des routes
 const agentRoutes = require('./api/routes/agent');
+const teamRoutes = require('./api/routes/team');
 
 // Log toutes les req
 app.use(morgan('dev'));
@@ -27,6 +28,7 @@ app.use(cors());
 
 // Utilisation des routes
 app.use('/agent', 	agentRoutes);
+app.use('/team', 	teamRoutes);
 
 //Gestion des erreurs, ce middleware s'active si aucune des routes ne correspond
 app.use((req, res, next) => {
